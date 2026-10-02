@@ -29,8 +29,25 @@ while (true)
             Console.WriteLine("Ogiltigt pris. skriv heltal tack.");
             continue;
         }
-        list.Add(new Item(name, price));
+        try
+        {
+            Item item = new Item(name, price);
+
+            if (!list.Add(item))
+            {
+            Console.WriteLine("Varan ryms inte inom budgettaket och lades inte till i din lista.");
+            }
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            Console.WriteLine("Ogiltigt pris: priset får inte vara negativt.");
+        }
+        catch (ArgumentException)
+        {
+            Console.WriteLine("Ogiltig vara: namnet får inte vara tomt.");
+        }
     }
+
     else if (choice == 2)
     {
         Console.Write("Nummer: ");

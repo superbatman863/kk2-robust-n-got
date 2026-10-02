@@ -6,11 +6,16 @@
 
 // 4 testade precis att ta bort något som inte var med och då kraschade programet. Så jag la in en if sats men jag ville göra en bool för jag är relativt säker på att de borde fungera med en bool men jag känner inte mig tillräklgit säker på de men de borde gå tror jag, men med en if sats som gör att om de inte finns något i items så skriver den ut ett medelande och man får välja något annat.
 
-// nu med 30 min kvar inser jag att jag borde nog följt markdown istället för att göra kommentarer här. 
+// nu inser jag att jag borde nog följt markdown istället för att göra kommentarer här. 
 
 // 5 Så man kan inte råka skriva en bokstav när man startar programet dp kraschar det s´å jag la en in en trypasre istället för vanlig parse och körde några if saster. jag la in if saster på priset också.
 
-// 6 jag inser nu att jag kommer bli klar lite senare än va tiden säger och jag ber hemskt mycket om ursäkt för de.  Jag frågade claude om de här med catch och ingen catch. Så om jag har fattat de rätt så är try and catch typ lite som en if sats fast för om man gör fel tror jag ialalfall så la jag till de. 
+// 6 jag inser nu att jag kommer bli klar lite senare än va tiden (flera timmare senare inser jag nu när de stog 16 och inte 23.59 på instruktionen) säger och jag ber hemskt mycket om ursäkt för de.  Jag frågade claude om de här med catch och ingen catch. Så om jag har fattat de rätt så är try and catch typ lite som en if sats fast för om man gör fel tror jag ialalfall så la jag till de. 
+
+// Del 2 så la jag till några såna här coola ArgumentException och ArgumentOutOfRangeException för att priset inte skulle vara negativ elelr tomt namn. sen la jag till en budget limit på 670 för jag tyckte de lätt bra och så gjorde jag att add retunera false om de går över budgeten. 
+Sen så kände jag mig klar men kontroll frågade med claude om jag har gjort allt och claude sa at man behöver ha något ifall man skriver negatitvt inut it txt filen jag tycker inte de är super nodvändigt kanske men jag la till det endån för att få mer flyt i fingrarna med att skriva kod men annars ja. Tyckte också del 2 va svårare än del 1
+
+// förbättringar? asså lite ascii art hade inte varit dålgit gjort de trevligare. En katalog med varor hade iheller inte skadadt någon. Jag borde följa tiden bättre också de hade varit en bra förbättring. Annars är jag väl nöjd för stunden. 
 
 
 

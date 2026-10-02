@@ -2,6 +2,8 @@
 class ShoppingList
 {
     private List<Item> items = new List<Item>();
+
+    private int budgetLimit = 670;
     private string path;
 
     public ShoppingList(string path)
@@ -9,11 +11,16 @@ class ShoppingList
         this.path = path;
     }
 
-    public void Add(Item item)
+    public bool Add(Item item)
     {
-        items.Add(item);
-    }
+        if (Total() + item.Price > budgetLimit)
+        {
+        return false;
+        }
 
+        items.Add(item);
+        return true;
+}
     // Removes the item the user sees as number 1, 2, 3 ...
     public void RemoveAt(int number)
     {
@@ -84,7 +91,7 @@ class ShoppingList
         catch (IOException ex)
         {
             Console.WriteLine($"Listan kunde inte sparas: {ex.Message}");
-            }
+        }
     }
 
     // Reads the file back into the list.
@@ -100,12 +107,36 @@ class ShoppingList
             Console.WriteLine("Ingen sparad lista hittades. Börjar med en tom lista.");
             return;
         }
-
+    
 
         foreach (string line in lines)
         {
+            if (string.IsNullOrWhiteSpace(line))
+            {
+            continue;
+            }
+
             string[] parts = line.Split(';');
-            items.Add(new Item(parts[1], int.Parse(parts[0])));
+
+            if (parts.Length < 2 || !int.TryParse(parts[0], out int price))
+            {
+            Console.WriteLine($"Hoppar över ogiltig rad: {line}");
+            continue;
+            }
+
+            try
+            {
+            items.Add(new Item(parts[1], price));
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+            Console.WriteLine($"Hoppar över rad ({line}): {ex.Message}");
+            }
+            catch (ArgumentException ex)
+            {
+            Console.WriteLine($"Hoppar över rad ({line}): {ex.Message}");
+            }
         }
     }
 }
+
