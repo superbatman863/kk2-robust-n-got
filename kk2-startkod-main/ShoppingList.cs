@@ -63,30 +63,43 @@ class ShoppingList
     }
 
     // Writes one item per line, as "price;name".
+// Writes one item per line, as "price;name".
     public void Save()
     {
         List<string> lines = new List<string>();
-
+        
         foreach (Item item in items)
         {
-            lines.Add($"{item.Price};{item.Name}");
+        lines.Add($"{item.Price};{item.Name}");
         }
-
         try
         {
             File.WriteAllText(path, string.Join("\r\n", lines) + "\r\n");
+            Console.WriteLine("Listan är sparad.");
         }
-        catch
+        catch (UnauthorizedAccessException ex)
         {
+            Console.WriteLine($"Listan kunde inte sparas (ingen åtkomst): {ex.Message}");
         }
-
-        Console.WriteLine("Listan är sparad.");
+        catch (IOException ex)
+        {
+            Console.WriteLine($"Listan kunde inte sparas: {ex.Message}");
+            }
     }
 
     // Reads the file back into the list.
     public void Load()
-    {
-        string[] lines = File.ReadAllLines(path);
+    { 
+        string[] lines;
+        try
+        {
+            lines = File.ReadAllLines(path);
+        }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("Ingen sparad lista hittades. Börjar med en tom lista.");
+            return;
+        }
 
 
         foreach (string line in lines)

@@ -8,7 +8,10 @@
 
 // nu med 30 min kvar inser jag att jag borde nog följt markdown istället för att göra kommentarer här. 
 
-// 5 Så man kan inte råka skriva en bokstav när man startar programet dp kraschar det s´å jag la en in en trypasre istället för vanlig parse och körde några if saster 
+// 5 Så man kan inte råka skriva en bokstav när man startar programet dp kraschar det s´å jag la en in en trypasre istället för vanlig parse och körde några if saster. jag la in if saster på priset också.
+
+// 6 jag inser nu att jag kommer bli klar lite senare än va tiden säger och jag ber hemskt mycket om ursäkt för de.  Jag frågade claude om de här med catch och ingen catch. Så om jag har fattat de rätt så är try and catch typ lite som en if sats fast för om man gör fel tror jag ialalfall så la jag till de. 
+
 
 
 
