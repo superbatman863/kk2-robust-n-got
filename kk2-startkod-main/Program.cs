@@ -13,20 +13,32 @@ while (true)
     Console.WriteLine("5. Avsluta");
     Console.Write("Välj: ");
 
-    int choice = int.Parse(Console.ReadLine());
+    if (!int.TryParse(Console.ReadLine(), out int choice))
+    {
+        Console.WriteLine("Ogiltigt val använd nummer tack .");
+        continue;
+    }
 
     if (choice == 1)
     {
         Console.Write("Namn: ");
         string name = Console.ReadLine();
         Console.Write("Pris: ");
-        int price = int.Parse(Console.ReadLine());
+        if (!int.TryParse(Console.ReadLine(), out int price))
+        {
+            Console.WriteLine("Ogiltigt pris. skriv heltal tack.");
+            continue;
+        }
         list.Add(new Item(name, price));
     }
     else if (choice == 2)
     {
         Console.Write("Nummer: ");
-        int number = int.Parse(Console.ReadLine());
+        if (!int.TryParse(Console.ReadLine(), out int number))
+        {
+            Console.WriteLine("Ogiltigt nummer. skriv heltal tack.");
+            continue;
+        }
         list.RemoveAt(number);
     }
     else if (choice == 3)

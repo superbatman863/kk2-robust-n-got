@@ -4,6 +4,14 @@
 
 // 3 ser att något är fel med räknaren då den vissar fel summa. Den räknar bara brödet och osten vilket då blir 121 men de borde blir 136 istället. for (int i = 1; i < items.Count; i++) men arrayer och sånt börjar på 0, de kommer jag ihåg från våran text adventure. så de var bara att ändra int i = 0 istället.
 
+// 4 testade precis att ta bort något som inte var med och då kraschade programet. Så jag la in en if sats men jag ville göra en bool för jag är relativt säker på att de borde fungera med en bool men jag känner inte mig tillräklgit säker på de men de borde gå tror jag, men med en if sats som gör att om de inte finns något i items så skriver den ut ett medelande och man får välja något annat.
+
+// nu med 30 min kvar inser jag att jag borde nog följt markdown istället för att göra kommentarer här. 
+
+// 5 Så man kan inte råka skriva en bokstav när man startar programet dp kraschar det s´å jag la en in en trypasre istället för vanlig parse och körde några if saster 
+
+
+
 
 
 

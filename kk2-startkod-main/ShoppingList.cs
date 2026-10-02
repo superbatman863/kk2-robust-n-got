@@ -17,6 +17,11 @@ class ShoppingList
     // Removes the item the user sees as number 1, 2, 3 ...
     public void RemoveAt(int number)
     {
+        if (number < 1 || number > items.Count)
+        {
+            Console.WriteLine("Det finns ingen vara med det numret.");
+            return;
+        }
         items.RemoveAt(number - 1);
     }
 
